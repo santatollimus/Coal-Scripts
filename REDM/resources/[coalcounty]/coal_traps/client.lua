@@ -70,7 +70,7 @@ table.insert(Traps, {
     -- Register on server
     TriggerServerEvent("coal_traps:trapPlaced", netId)
 
-    print(("[coal_traps] Placed trap entity %s (netId=%s)"):format(trap, netId))
+    TriggerEvent("coal_debugger:trapLog", ("Placed trap entity %s (netId=%s)"):format(trap, netId))
 end)
 
 -- Mark a trap as baited when server confirms
@@ -79,11 +79,29 @@ AddEventHandler("coal_traps:trapBaited", function(netId)
     for _, trap in ipairs(Traps) do
         if trap.netId == netId then
             trap.baited = true
-            print("[coal_traps] Trap baited: " .. tostring(netId))
+            TriggerEvent("coal_debugger:trapLog", "Trap baited: " .. tostring(netId))
             break
         end
     end
 end)
+
+----------------------------------------------------------------------
+-- Trap debug relay (from coal_traps)
+----------------------------------------------------------------------
+
+RegisterNetEvent("coal_debugger:trapLog")
+AddEventHandler("coal_debugger:trapLog", function(msg)
+    msg = tostring(msg)
+
+    -- F8
+    print("[coal_debugger] [coal_traps] " .. msg)
+
+    -- HUD box (optional)
+    if ShowDebugText then
+        ShowDebugText("[traps] " .. msg)
+    end
+end)
+
 
 -- Proximity loop: show prompt + keypress to bait trap
 CreateThread(function()
