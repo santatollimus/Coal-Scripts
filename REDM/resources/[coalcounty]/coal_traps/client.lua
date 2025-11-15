@@ -57,15 +57,15 @@ AddEventHandler("coal_traps:placeBearTrap", function()
     PlaceObjectOnGroundProperly(trap)
     SetEntityAsMissionEntity(trap, true, false)
 
-    local netId = NetworkGetNetworkIdFromEntity(trap)
-    SetNetworkIdCanMigrate(netId, true)
+local netId = NetworkGetNetworkIdFromEntity(trap)
+-- SetNetworkIdCanMigrate(netId, true)  -- not needed / not available on RedM
 
-    -- Save locally
-    table.insert(Traps, {
-        entity = trap,
-        netId  = netId,
-        baited = false
-    })
+-- Save locally
+table.insert(Traps, {
+    entity = trap,
+    netId  = netId,
+    baited = false
+})
 
     -- Register on server
     TriggerServerEvent("coal_traps:trapPlaced", netId)
