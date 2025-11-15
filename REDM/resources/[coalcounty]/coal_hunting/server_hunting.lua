@@ -1,7 +1,7 @@
-local Core = exports.vorp_core:GetCore()
+local Core          = exports.vorp_core:GetCore()
 local vorpInventory = exports.vorp_inventory:vorp_inventoryApi()
 
--- Look up reward table for a model hash
+-- Look up reward table for a given model hash
 local function getRewardsForModel(model)
     if not HuntingConfig or not HuntingConfig.rewards then
         return nil
@@ -16,7 +16,7 @@ local function prettifyItemName(item)
     return item:gsub("^%l", string.upper)
 end
 
--- Give items and build a nice summary string
+-- Give items and build a human-readable summary string
 local function giveMeatToPlayer(source, rewards)
     local parts = {}
 
@@ -24,45 +24,30 @@ local function giveMeatToPlayer(source, rewards)
         if r.item and r.count and r.count > 0 then
             vorpInventory.addItem(source, r.item, r.count)
 
-            local label = string.format("%dx %s", r.count, prettifyItemName(r.item))
-            table.insert(parts, label)
+            local label = r.display or prettifyItemName(r.item)
+            table.insert(parts, string.format("%dx %s", r.count, label))
         end
     end
 
-    if #parts == 0 then
-        return nil
+    if #parts > 0 then
+        return table.concat(parts, ", ")
     end
 
-    return table.concat(parts, ", ")
+    return nil
 end
 
+-- Fired from client when a carcass is picked up
 RegisterNetEvent("coal_hunting:PickedUpCarcass")
 AddEventHandler("coal_hunting:PickedUpCarcass", function(netId, model)
     local src = source
-    if not netId or not model then
+
+    model = tonumber(model) or model
+    if not model then
+        print("[coal_hunting] PickedUpCarcass: missing model from client")
         return
     end
 
-    -- If the network ID no longer exists, bail out cleanly
-    if not NetworkDoesNetworkIdExist(netId) then
-        TriggerClientEvent("vorp:TipRight", src, "The carcass is no longer here.", 4000)
-        return
-    end
-
-    -- Now it's safe to resolve the entity
-    local entity = NetworkGetEntityFromNetworkId(netId)
-    if entity == 0 or not DoesEntityExist(entity) then
-        TriggerClientEvent("vorp:TipRight", src, "The carcass is no longer here.", 4000)
-        return
-    end
-
-    -- Always trust the actual entity model
-    local actualModel = GetEntityModel(entity)
-    if actualModel ~= 0 and actualModel ~= -1 then
-        model = actualModel
-    end
-
-    -- Look up rewards for this model
+    -- Look up rewards
     local rewards = getRewardsForModel(model)
     if not rewards then
         print(("[coal_hunting] No rewards configured for model hash: %s"):format(tostring(model)))
@@ -71,24 +56,15 @@ AddEventHandler("coal_hunting:PickedUpCarcass", function(netId, model)
         return
     end
 
-    -- DEBUG: see exactly what we’re handling
-    print(("[coal_hunting] Player %s picked up carcass: netId=%s, model=%s"):format(
-        tostring(src), tostring(netId), tostring(model)
-    ))
-
-    -- Delete the carcass / prop for everyone
-    DeleteEntity(entity)
-    TriggerClientEvent("coal_hunting:ClientDeleteCarcass", -1, netId)
+    -- Tell all clients to delete the carcass entity by netId
+    if netId then
+        TriggerClientEvent("coal_hunting:ClientDeleteCarcass", -1, netId)
+    end
 
     -- Give meat & build summary
-local summary = giveMeatToPlayer(src, rewards)
+    local summary = giveMeatToPlayer(src, rewards)
+    local msg = summary and ("You collected: " .. summary)
+                       or  "You collected nothing from the carcass."
 
--- NEW: send summary to coal_debugger on that client
-TriggerClientEvent("coal_debugger:RewardSummary", src, model, summary)
-
-local msg = summary and ("You collected: " .. summary)
-                   or  "You collected nothing from the carcass."
-
-TriggerClientEvent("vorp:TipRight", src, msg, 4000)
-
+    TriggerClientEvent("vorp:TipRight", src, msg, 4000)
 end)
