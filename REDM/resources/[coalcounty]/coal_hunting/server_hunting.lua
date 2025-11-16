@@ -25,14 +25,22 @@ local function giveMeatToPlayer(source, rewards)
         if r.item and r.count and r.count > 0 then
             vorpInventory.addItem(source, r.item, r.count)
 
-            local label = r.display or prettifyItemName(r.item)
+            local itemName = tostring(r.item)
+
+            -- allow manual override per reward later: { item="venison", count=2, display="Venison Meat" }
+            local label = r.display or getItemLabel(itemName)
+
             table.insert(parts, string.format("%dx %s", r.count, label))
         end
     end
 
-    if #parts > 0 then
-        return table.concat(parts, ", ")
+    if #parts == 0 then
+        return nil
     end
+
+    return table.concat(parts, ", ")
+end
+
 
     return nil
 end
