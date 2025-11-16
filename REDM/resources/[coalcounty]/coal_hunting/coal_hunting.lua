@@ -7,7 +7,9 @@ HuntingConfig = {
         [-1202329112] = {},
 		--Generic pelt prop3 (delete it, but give noitems)
 		[1780825678] = {},
-        ----------------------------------------------------------------
+		--Generic pelt prop4 (delete it, but give noitems)
+        [85379810] = {},
+		----------------------------------------------------------------
         -- VENISON-TYPE ANIMALS (DEER / BUCK / PRONGHORN / ELK)
         ----------------------------------------------------------------
 
