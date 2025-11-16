@@ -46,12 +46,37 @@ CreateThread(function()
     end
 end)
 
--- Client-side delete if server asks (safety / desync fix)
-RegisterNetEvent("coal_hunting:ClientDeleteCarcass", function(netId)
-    if not netId then return end
+RegisterNetEvent("coal_hunting:ClientDeleteCarcass")
+AddEventHandler("coal_hunting:ClientDeleteCarcass", function(netId)
+    local ent = nil
 
-    local ent = NetworkGetEntityFromNetworkId(netId)
-    if ent ~= 0 and DoesEntityExist(ent) then
-        DeleteEntity(ent)
+    -- Try via network ID first (works for networked props/peds)
+    if netId and netId ~= 0 then
+        ent = NetworkGetEntityFromNetworkId(netId)
+        if ent ~= 0 and DoesEntityExist(ent) then
+            -- Debug
+            TriggerEvent("coal_debugger:log",
+                ("[coal_hunting] Deleting carcass by netId=%s (entity=%s)")
+                :format(tostring(netId), tostring(ent))
+            )
+            DeleteEntity(ent)
+            return
+        end
+    end
+
+    -- Fallback: use the last carried entity (covers local-only entities like some animals)
+    if lastCarriedEntity ~= 0 and DoesEntityExist(lastCarriedEntity) then
+        TriggerEvent("coal_debugger:log",
+            ("[coal_hunting] Deleting carcass using fallback lastCarriedEntity=%s")
+            :format(tostring(lastCarriedEntity))
+        )
+        DeleteEntity(lastCarriedEntity)
+        lastCarriedEntity = 0
+    else
+        TriggerEvent("coal_debugger:log",
+            ("[coal_hunting] Failed to delete carcass (netId=%s) – no valid entity found")
+            :format(tostring(netId))
+        )
     end
 end)
+

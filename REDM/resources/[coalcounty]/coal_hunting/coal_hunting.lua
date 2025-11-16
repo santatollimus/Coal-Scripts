@@ -13,22 +13,22 @@ HuntingConfig = {
 
         -- Whitetail Deer ($3.50 -> Tier B -> 3)
         [1110710183] = {
-            { item = "venison", count = 3 },
+            { item = "venison", count = 2 },
         },
 
         -- Whitetail Buck ($3.15 -> Tier B -> 3)
         [-1963605336] = {
-            { item = "venison", count = 3 },
+            { item = "venison", count = 2 },
         },
 
         -- American Pronghorn Doe ($3.75 -> Tier A -> 4)
         [1755643085] = {
-            { item = "venison", count = 4 },
+            { item = "venison", count = 2 },
         },
 
         -- Elk ($3.90 -> Tier A -> 4)
         [-2021043433] = {
-            { item = "venison", count = 4 },
+            { item = "venison", count = 2 },
         },
 
         ----------------------------------------------------------------
