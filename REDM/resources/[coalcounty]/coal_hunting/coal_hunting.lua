@@ -215,25 +215,25 @@ HuntingConfig = {
 		},
 
         ----------------------------------------------------------------
-        -- GAMEY / HERPTILE / SMALL WEIRD CREATURES
+        -- Gamey_Meat / HERPTILE / SMALL WEIRD CREATURES
         ----------------------------------------------------------------
 		
 		-- generic Black-Tailed Jackrabbit (~2.0 -> 2)
 		[311947389] = {},
 		-- Black-Tailed Jackrabbit (~2.0 -> 2)
 		[-541762431] = {
-		{ item = "gamey", count = 1 },
+		{ item = "Gamey_Meat", count = 1 },
 		{ item = "rabbits", count = 1 },
 		{ item = "rabbitpaw", count = 2 },
 		},
         -- Iguanas
         -- Green Iguana (~2.25 -> Tier B -> 3)
         [-1854059305] = {
-            { item = "gamey", count = 3 },
+            { item = "Gamey_Meat", count = 3 },
         },
         -- Desert Iguana (~2.75 -> Tier B -> 3)
         [-593056309] = {
-            { item = "gamey", count = 3 },
+            { item = "Gamey_Meat", count = 3 },
         },
 
         ----------------------------------------------------------------
