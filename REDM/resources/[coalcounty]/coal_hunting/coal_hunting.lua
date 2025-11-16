@@ -203,9 +203,12 @@ HuntingConfig = {
 
 		-- Black-Tailed Jackrabbit (~2.0 -> 2)
 		[-541762431] = {
-		{ item = "gamey", count = 2 },
+--		{ item = "gamey", count = 2 },
+		{ item = { "gamey", "rabbits", "rabbitpaw" }, count = 1 },
 		},
-
+		[311947389] = {
+		{ item = { "gamey", "rabbits", "rabbitpaw" }, count = 1 },
+		},
         -- Iguanas
         -- Green Iguana (~2.25 -> Tier B -> 3)
         [-1854059305] = {
