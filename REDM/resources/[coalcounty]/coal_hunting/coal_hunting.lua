@@ -201,7 +201,7 @@ HuntingConfig = {
         [-1790499186] = {                   -- Red Boa
             { item = "stringy", count = 3 },
         },
-        [1464167925] = {                    -- Fer-de-Lance
+        [1464167925] = {                    -- Fer-de-Lance Copperhead
             { item = "stringy", count = 3 },
         },
         [846659001] = {                     -- Black-Tailed Rattlesnake
