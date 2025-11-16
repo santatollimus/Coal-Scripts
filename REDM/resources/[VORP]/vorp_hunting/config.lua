@@ -687,8 +687,20 @@ Config.SkinnableAnimals = {
         action = "Skinned",
         type = "satchel_textures"
     },
-    --  [1755643085]   = { name = "American Pronghorn Doe", givenItem = { "venison" }, givenAmount = { 0 },  givenDisplay = { "meat","Heart", "Claw"},money = 0.75, gold = 0, rolPoints = 0,xp = 1,    texture = ,action = ,type = "satchel_textures"},
-    [2079703102]  = {
+    [1755643085] = { 
+		name = "American Pronghorn Buck", 
+		givenItem = { "prongs", "pronghornh", "deerheart" }, 
+		givenAmount = { 1, 1, 1 },  
+		givenDisplay = { "Pronghorn Horn","Deer Heart", "Pronghorn Pelt"},
+		money = 0.75, 
+		gold = 0, 
+		rolPoints = 0,
+		xp = 1,    
+		texture = "animal_pronghorn_buck",
+		action = "Skinned",
+		type = "satchel_textures"
+	},
+    [2079703102] = {
         name = "Greater Prairie Chicken",
         givenItem = { "prairif", "prairib" },
         givenAmount = { 1, 1 },
