@@ -1,9 +1,11 @@
 -- custom_crosshair.lua
 -- style orange (#FF6600)
 local r, g, b = 255, 102, 0
-local armSize   = 0.0025   -- length of each little arm
-local thickness = 0.0007   -- line thickness
-local offset    = 0.0035   -- distance from center
+
+-- tightened crosshair
+local armSize   = 0.0018   -- was 0.0025
+local thickness = 0.0005   -- was 0.0007
+local offset    = 0.0018   -- was 0.0035
 
 local function isAiming()
     return IsAimCamActive() or IsControlPressed(0, 0xF84FA74F)
