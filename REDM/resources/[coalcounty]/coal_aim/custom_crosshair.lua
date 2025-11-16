@@ -1,17 +1,18 @@
--- custom_crosshair.lua
--- Compact 3-row orange crosshair shown while aiming
+-- custom_crosshair.lua (aim-only, big 3-row debug)
 
 local r, g, b = 255, 102, 0   -- orange
 
--- tweak these to taste
-local armLength = 0.0022      -- bar length
-local thickness = 0.0006      -- bar height
-local offsetX   = 0.0020      -- left/right distance from center
-local rowGap    = 0.0020      -- vertical distance between rows
+local armLength = 0.0018      -- bar length (nice and modest)
+local thickness = 0.0009      -- bar height (thinner)
+local offsetX   = 0.0025      -- left/right distance from center
+local rowGap    = 0.0030      -- MUCH closer rows (was 0.0060)
+
 
 local INPUT_AIM = 0xF84FA74F  -- right mouse / LT
 
 CreateThread(function()
+    print("[coal_aim] compact 3-row crosshair loaded")
+
     while true do
         Wait(0)
 
