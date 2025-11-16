@@ -1,12 +1,13 @@
 -- custom_crosshair.lua
 -- style orange (#FF6600)
+-- custom_crosshair.lua – slightly larger crosshair
 local r, g, b = 255, 102, 0
 
--- tightened crosshair
 local armSize   = 0.0022   -- was 0.0018
 local thickness = 0.0006   -- was 0.0005
 local offset    = 0.0019   -- tiny bump so the arms don’t overlap
 local rowGap    = 0.0015   -- vertical distance between rows
+
 
 local function isAiming()
     return IsAimCamActive() or IsControlPressed(0, 0xF84FA74F)
@@ -68,8 +69,11 @@ DrawRect(cx + offset, cy, armSize, thickness, r, g, b, 255) -- middle-right
 -- top row (new, same width, a bit above)
 DrawRect(cx - offset, cy - rowGap, armSize, thickness, r, g, b, 255) -- top-left
 DrawRect(cx + offset, cy - rowGap, armSize, thickness, r, g, b, 255) -- top-right
+-- bottom row (optional, if you want 3 rows)
+DrawRect(cx - offset, cy + rowGap, armSize, thickness, r, g, b, 255)
+DrawRect(cx + offset, cy + rowGap, armSize, thickness, r, g, b, 255)
 
-        end
+  end
 
         Wait(0)
     end
