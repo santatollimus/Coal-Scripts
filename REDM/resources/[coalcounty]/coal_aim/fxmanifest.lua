@@ -6,5 +6,5 @@ description 'Anti-lock-on / Anti-aimassist'
 version '1.0.0'
 
 client_scripts {
-    'anti_lockon.lua','custom_crosshair.lua'
+    'anti_lockon.lua', 'custom_crosshair.lua', 'coal_aim.lua'
 }
