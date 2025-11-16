@@ -195,18 +195,18 @@ HuntingConfig = {
         -- Virginia Possum (~2.0 -> Tier C -> 2)
 		[-1414989025] = {
 		{ item = "game", count = 1 },
-		[ item = "opossumc", count = 1},
-		[ item = "opossums", count = 1},
+		{ item = "opossumc", count = 1},
+		{ item = "opossums", count = 1},
 		},
 
         ----------------------------------------------------------------
         -- GAMEY / HERPTILE / SMALL WEIRD CREATURES
         ----------------------------------------------------------------
-
+		
 		-- generic Black-Tailed Jackrabbit (~2.0 -> 2)
-		[-541762431] = {},
+		[311947389] = {},
 		-- Black-Tailed Jackrabbit (~2.0 -> 2)
-		[311947389] = {
+		[-541762431] = {
 		{ item = "gamey", count = 1 },
 		{ item = "rabbits", count = 1 },
 		{ item = "rabbitpaw", count = 2 },
