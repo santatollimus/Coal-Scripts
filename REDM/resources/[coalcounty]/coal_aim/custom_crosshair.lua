@@ -1,12 +1,13 @@
 -- custom_crosshair.lua
 -- style orange (#FF6600)
 -- custom_crosshair.lua – slightly larger crosshair
-local r, g, b = 255, 102, 0
+local r, g, b = 255, 102, 0   -- orange
 
-local armSize   = 0.0022   -- was 0.0018
-local thickness = 0.0006   -- was 0.0005
-local offset    = 0.0019   -- tiny bump so the arms don’t overlap
-local rowGap    = 0.0015   -- vertical distance between rows
+local armSize   = 0.0022      -- bar length
+local thickness = 0.0006      -- bar height
+local offsetX   = 0.0019      -- how far left/right from center
+local rowGap    = 0.0020      -- vertical distance between rows
+
 
 
 local function isAiming()
@@ -60,18 +61,29 @@ CreateThread(function()
                 HideHudComponentThisFrame(14)
             end
 
-            local cx, cy = 0.5, 0.5
+-- center of screen
+local cx, cy = 0.5, 0.5
 
--- middle row (what you have now, centered vertically)
-DrawRect(cx - offset, cy, armSize, thickness, r, g, b, 255) -- middle-left
-DrawRect(cx + offset, cy, armSize, thickness, r, g, b, 255) -- middle-right
+-- pre-calc x and y positions
+local leftX  = cx - offsetX
+local rightX = cx + offsetX
 
--- top row (new, same width, a bit above)
-DrawRect(cx - offset, cy - rowGap, armSize, thickness, r, g, b, 255) -- top-left
-DrawRect(cx + offset, cy - rowGap, armSize, thickness, r, g, b, 255) -- top-right
--- bottom row (optional, if you want 3 rows)
-DrawRect(cx - offset, cy + rowGap, armSize, thickness, r, g, b, 255)
-DrawRect(cx + offset, cy + rowGap, armSize, thickness, r, g, b, 255)
+local midY   = cy
+local topY   = cy - rowGap
+local botY   = cy + rowGap
+
+-- MIDDLE row
+DrawRect(leftX,  midY, armSize, thickness, r, g, b, 255)
+DrawRect(rightX, midY, armSize, thickness, r, g, b, 255)
+
+-- TOP row
+DrawRect(leftX,  topY, armSize, thickness, r, g, b, 255)
+DrawRect(rightX, topY, armSize, thickness, r, g, b, 255)
+
+-- BOTTOM row
+DrawRect(leftX,  botY, armSize, thickness, r, g, b, 255)
+DrawRect(rightX, botY, armSize, thickness, r, g, b, 255)
+
 
   end
 
