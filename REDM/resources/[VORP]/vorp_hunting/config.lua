@@ -983,7 +983,7 @@ Config.SkinnableAnimals = {
     },
     [-593056309]  = {
         name = "Desert Iguana",
-        givenItem = { dleguans", "lizardl" },
+        givenItem = { "dleguans", "lizardl" },
         givenAmount = { 1, 1 },
         givenDisplay = { "Desert Iguana pelt", "Lizard tail" },
         money = 0,

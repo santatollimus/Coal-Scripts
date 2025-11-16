@@ -341,7 +341,7 @@ HuntingConfig = {
         [-1076508705] = {
             { item = "bird", count = 1 },
 			{ item = "rspoonf", count = 1 },
-			[ item = "rspoonb", count =1 },
+			{ item = "rspoonb", count =1 },
         },
 
         -- Dominique Rooster (small/cheap -> 1–2, we keep 2 for fun)
@@ -369,7 +369,7 @@ HuntingConfig = {
         [2079703102] = {
             { item = "bird", count = 1 },
 			{ item = "prairif", count = 1 },
-			[ item = "prairib", count = 1 },
+			{ item = "prairib", count = 1 },
         },
 
         -- Ring-Necked Pheasant ($1.25 -> border C/D -> 2)
