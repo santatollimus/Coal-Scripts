@@ -29,6 +29,50 @@ local function RotationToDirection(rot)
     }
 end
 
+local STATUS_DURATION = 1500          -- ms to show the text
+local currentStatus = nil
+local statusExpireTime = 0
+
+local function setStatus(msg)
+    currentStatus = msg
+    statusExpireTime = GetGameTimer() + STATUS_DURATION
+end
+
+local function DrawStatusText()
+    if not currentStatus then
+        return
+    end
+
+    local now = GetGameTimer()
+    if now > statusExpireTime then
+        currentStatus = nil
+        return
+    end
+
+    -- this is basically your TEST code, but using currentStatus
+    local str = CreateVarString(10, "LITERAL_STRING", currentStatus)
+    SetTextScale(0.6, 0.6)
+    SetTextColor(255, 255, 255, 255)
+    SetTextCentre(true)
+
+    -- center-ish for now so you can’t miss it; we’ll move it after it works
+   -- DisplayText(str, 0.5, 0.4)
+   -- to (top-right-ish)
+DisplayText(str, 0.90, 0.4)
+end
+
+-- draw thread: call DrawStatusText every frame
+CreateThread(function()
+    -- sanity: show something when resource loads so you know it’s working
+    setStatus("SHOTTRACKER LOADED")
+
+    while true do
+        Wait(0)
+        DrawStatusText()
+    end
+end)
+
+
 -- Instead of sending to chat, update the HUD status
 local function setStatus(msg)
     currentStatus = msg
@@ -47,24 +91,21 @@ local function DrawStatusText()
         return
     end
 
-    -- Basic text setup
-    SetTextFont(4)          -- font index (try 0–4 if you want to experiment)
-    SetTextScale(0.5, 0.5)  -- size
-    SetTextProportional(1)
-    SetTextColour(255, 255, 255, 255)
-    SetTextOutline()
+    -- Build the text string
+    local str = CreateVarString(10, "LITERAL_STRING", currentStatus)
+
+    -- Basic text setup (RedM)
+    SetTextScale(0.4, 0.4)                 -- text size
+    SetTextColor(255, 255, 255, 255)       -- white
+    SetTextCentre(false)                   -- left-aligned
     SetTextDropshadow(1, 0, 0, 0, 255)
+    SetTextOutline()
 
-    -- No fancy justification/wrap, just left-aligned text near top-right
-    SetTextCentre(false)
-
-    BeginTextCommandDisplayText("STRING")
-    AddTextComponentSubstringPlayerName(currentStatus)
-
-    -- x, y screen coords: 0.0 = left/top, 1.0 = right/bottom
-    -- 0.90, 0.05 = near top-right but safely on-screen
-    EndTextCommandDisplayText(0.90, 0.05)
+    -- x, y: 0.0 = left/top, 1.0 = right/bottom
+    -- 0.90, 0.05 = near top-right
+    DisplayText(str, 0.90, 0.05)
 end
+
 
 
 -- Thread 1: detect shots and set status
