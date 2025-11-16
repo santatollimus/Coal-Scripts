@@ -169,16 +169,12 @@ RegisterNetEvent("coal_debugger:RewardSummary", function(model, summary)
         tostring(summary or "nil")
     ))
 end)
------------------------------------------------------------------------
-----------------------------------------------------------------------
+-- =========================================================
 -- Reward debug from coal_hunting
-----------------------------------------------------------------------
-
+-- =========================================================
 RegisterNetEvent("coal_debugger:rewardLog")
 AddEventHandler("coal_debugger:rewardLog", function(msg)
     msg = tostring(msg or "")
-
-    -- F8 console
     print("[coal_debugger] " .. msg)
-    end
 end)
+
