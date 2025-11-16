@@ -22,23 +22,30 @@ CreateThread(function()
         if isPedCarryingSomething(ped) then
             local ent = getCarriedEntity(ped)
 
-            if ent ~= 0 and DoesEntityExist(ent) then
-                if ent ~= lastCarriedEntity then
-                    lastCarriedEntity = ent
+ if ent ~= 0 and DoesEntityExist(ent) then
+    if ent ~= lastCarriedEntity then
+        lastCarriedEntity = ent
 
-                    local netId = NetworkGetNetworkIdFromEntity(ent)
-                    local model = GetEntityModel(ent)
+        -- Only try to get a net ID if the entity is actually networked
+        local isNetworked = Citizen.InvokeNative(0xC7827959479DCC78, ent) -- NETWORK_GET_ENTITY_IS_NETWORKED
+        local netId = nil
+        if isNetworked then
+            netId = NetworkGetNetworkIdFromEntity(ent)
+        else
+            netId = 0 -- we'll use the fallback delete path for non-networked entities
+        end
 
-                    -- Debug: you can comment this out later
-                    TriggerEvent("coal_debugger:log",
-                        ("[coal_hunting] Now carrying entity: netId=%s, model=%s")
-                        :format(tostring(netId), tostring(model))
-                    )
+        local model = GetEntityModel(ent)
 
-                    -- Tell server to process rewards + deletion
-                    TriggerServerEvent("coal_hunting:PickedUpCarcass", netId, model)
-                end
-            end
+        TriggerEvent("coal_debugger:log",
+            ("[coal_hunting] Now carrying entity: netId=%s, model=%s")
+            :format(tostring(netId), tostring(model))
+        )
+
+        TriggerServerEvent("coal_hunting:PickedUpCarcass", netId, model)
+    end
+end
+
         else
             -- Not carrying anything
             lastCarriedEntity = 0

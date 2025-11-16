@@ -9,8 +9,10 @@ HuntingConfig = {
 		[1780825678] = {},
 		--Generic pelt prop4 (delete it, but give noitems)
         [85379810] = {},
-		--Generic pelt prop5 {delete it, but give notitems)
+		--Generic pelt prop5 {delete it, but give noitems)
 		[-1258513246] = {},
+		--Generic pelt prop6 {delete it, but give noitems)
+		[412583060] = {},
 		----------------------------------------------------------------
 		-- MUTTON-TYPE ANIMALS (Sheep, Ram)
 		----------------------------------------------------------------

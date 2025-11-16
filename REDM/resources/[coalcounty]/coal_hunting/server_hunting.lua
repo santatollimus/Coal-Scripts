@@ -77,7 +77,7 @@ AddEventHandler("coal_hunting:PickedUpCarcass", function(netId, model)
         msg = ("[coal_hunting] Gave nothing to %s from model %s")
               :format(tostring(src), tostring(model))
         TriggerClientEvent("vorp:TipRight", src,
-            "You collected nothing from the carcass.", 4000)
+            "", 4000)
     end
 
     -- Server F8 log
