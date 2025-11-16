@@ -13,6 +13,8 @@ HuntingConfig = {
 		[-1258513246] = {},
 		--Generic pelt prop6 {delete it, but give noitems)
 		[412583060] = {},
+		--Generic snake pelt prop {delete it, but givenoitems}
+		[1464167925] = {},
 		----------------------------------------------------------------
 		-- MUTTON-TYPE ANIMALS (Sheep, Ram)
 		----------------------------------------------------------------
@@ -201,7 +203,7 @@ HuntingConfig = {
         [-1790499186] = {                   -- Red Boa
             { item = "stringy", count = 3 },
         },
-        [1464167925] = {                    -- Fer-de-Lance Copperhead
+        [740300135] = {                    -- Fer-de-Lance Copperhead
             { item = "stringy", count = 3 },
         },
         [846659001] = {                     -- Black-Tailed Rattlesnake
