@@ -262,8 +262,7 @@ Config.SkinnableAnimals = {
 		texture = "animal_boar",                  -- NON-legendary texture
 		action = "Skinned",
 		type = "satchel_textures"                 -- normal type
-	}
-
+	},
 	[-1963605336] = {
         name = "Buck",
         givenItem = { "buckantler", "bucks"},
@@ -1731,7 +1730,7 @@ Config.SkinnableAnimals = {
         action = "Skinned",
         type = "inventory_items_mp"
 		},
-	    [RIDGEBACK_HASH] = {
+	    [1234567890] = {
         name = "Legendary Ridgeback Spirit Bear",
         givenItem = { "biggame", "legbears3", "bearc" },
         givenAmount = { 1, 1, 1 },
