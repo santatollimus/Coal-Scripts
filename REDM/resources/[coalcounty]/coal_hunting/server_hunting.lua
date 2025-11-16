@@ -74,48 +74,45 @@ end
 RegisterNetEvent("coal_hunting:PickedUpCarcass")
 AddEventHandler("coal_hunting:PickedUpCarcass", function(netId, model)
     local src = source
-
     model = tonumber(model) or model
-    if not model then
-        print("[coal_hunting] PickedUpCarcass: missing model from client")
-        return
-    end
 
     local rewards = getRewardsForModel(model)
     if not rewards then
         local msg = ("[coal_hunting] No rewards configured for model hash: %s")
-                  :format(tostring(model))
+            :format(tostring(model))
         print(msg)
         TriggerClientEvent("vorp:TipRight", src,
-            "No hunting rewards configured for this carcass (model " .. tostring(model) .. ")", 4000)
-        -- also send to debugger if you like
+            "No hunting rewards configured for this carcass (model " .. tostring(model) .. ")",
+            4000
+        )
         TriggerClientEvent("coal_debugger:rewardLog", src, msg)
         return
     end
 
-    -- Ask all clients to delete the carcass entity, if we have a netId
+    -- delete request goes out immediately (client already waits 2s before actually deleting)
     if netId then
         TriggerClientEvent("coal_hunting:ClientDeleteCarcass", -1, netId)
     end
 
-    -- Give items & build summary
-    local summary = giveMeatToPlayer(src, rewards)
+    -- now delay the reward / tip / debugger log by 2 seconds
+    CreateThread(function()
+        Wait(2000)
 
-    local msg
-    if summary then
-        msg = ("[coal_hunting] Gave to %s from model %s: %s")
-              :format(tostring(src), tostring(model), tostring(summary))
-        TriggerClientEvent("vorp:TipRight", src, "You collected: " .. summary, 4000)
-    else
-        msg = ("[coal_hunting] Gave nothing to %s from model %s")
-              :format(tostring(src), tostring(model))
-        TriggerClientEvent("vorp:TipRight", src,
-            "", 4000)
-    end
+        local summary = giveMeatToPlayer(src, rewards)
 
-    -- Server F8 log
-    print(msg)
+        local msg
+        if summary then
+            msg = ("[coal_hunting] Gave to %s from model %s: %s")
+                :format(tostring(src), tostring(model), tostring(summary))
+            TriggerClientEvent("vorp:TipRight", src, "You collected: " .. summary, 4000)
+        else
+            msg = ("[coal_hunting] Gave nothing to %s from model %s")
+                :format(tostring(src), tostring(model))
+            TriggerClientEvent("vorp:TipRight", src,
+                "", 4000)
+        end
 
-    -- Send to Coal Debugger (client-side)
-    TriggerClientEvent("coal_debugger:rewardLog", src, msg)
+        print(msg)
+        TriggerClientEvent("coal_debugger:rewardLog", src, msg)
+    end)
 end)

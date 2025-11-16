@@ -26,6 +26,12 @@ HuntingConfig = {
 			{ item = "snaket", count = 2 },
 			{ item = "Snake_Poison", count = 2 },
 		},
+		-- Legendary Bear pelt
+		[-1631768462] = {
+			{ item = "biggame", count = 3 },
+			{ item = "leggbears", count = 1 },
+	--		{ item = "bearc", count = 1 },
+		},
 		----------------------------------------------------------------
 		-- MUTTON-TYPE ANIMALS (Sheep, Ram)
 		----------------------------------------------------------------

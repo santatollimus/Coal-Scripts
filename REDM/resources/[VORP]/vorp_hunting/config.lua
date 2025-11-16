@@ -223,7 +223,7 @@ Config.SkinnableAnimals = {
         gold = 0,
         rolPoints = 0,
         xp = 1,
-        texture = "animal_pronghorn",
+        texture = "a_c_pronghorn_01",
         action = "Skinned"
     },
     [-1124266369] = {
@@ -1754,9 +1754,9 @@ Config.SkinnableAnimals = {
     },
     [-551216071] = {
         name = "Legendary Owiza Bear",
-        givenItem = { "biggame", "legbears2", "bearc" },
-        givenAmount = { 1, 1, 1 },
-        givenDisplay = { "Big Game Meat", "Legendary Owiza Bear pelt", "Bear Claw" },
+        givenItem = { "bearc" },
+        givenAmount = { 1 },
+        givenDisplay = { "Bear Claw" },
         money = 0,
         gold = 0,
         rolPoints = 0,
@@ -1765,12 +1765,11 @@ Config.SkinnableAnimals = {
         action = "Skinned",
         type = "inventory_items_mp"
 		},
-	    [1234567890] = {
+	[-551216071] = {
         name = "Legendary Ridgeback Spirit Bear",
-        givenItem = { "biggame", "legbears3", "bearc" },
-        givenAmount = { 1, 1, 1 },
-        givenDisplay = {
-            "Big Game Meat", "Legendary Ridgeback Spirit Bear pelt", "Bear Claw"},
+        givenItem = { "bearc" },
+        givenAmount = { 1 },
+        givenDisplay = { "Bear Claw" },
         money = 0,
         gold = 0,
         rolPoints = 0,

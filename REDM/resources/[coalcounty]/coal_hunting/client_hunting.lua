@@ -55,35 +55,49 @@ end)
 
 RegisterNetEvent("coal_hunting:ClientDeleteCarcass")
 AddEventHandler("coal_hunting:ClientDeleteCarcass", function(netId)
-    local ent = nil
+    -- capture current values so they don't change while we wait
+    local thisNetId = netId
+    local thisLast  = lastCarriedEntity
 
-    -- Try via network ID first (works for networked props/peds)
-    if netId and netId ~= 0 then
-        ent = NetworkGetEntityFromNetworkId(netId)
-        if ent ~= 0 and DoesEntityExist(ent) then
-            -- Debug
-            TriggerEvent("coal_debugger:log",
-                ("[coal_hunting] Deleting carcass by netId=%s (entity=%s)")
-                :format(tostring(netId), tostring(ent))
-            )
-            DeleteEntity(ent)
-            return
+    CreateThread(function()
+        -- wait 2 seconds before removing the body
+        Wait(1500)
+
+        local ent = nil
+
+        -- Try via network ID first (works for networked props/peds)
+        if thisNetId and thisNetId ~= 0 then
+            ent = NetworkGetEntityFromNetworkId(thisNetId)
+            if ent ~= 0 and DoesEntityExist(ent) then
+                TriggerEvent("coal_debugger:log",
+                    ("[coal_hunting] Deleting carcass by netId=%s (entity=%s)")
+                    :format(tostring(thisNetId), tostring(ent))
+                )
+
+                DeleteEntity(ent)
+                return
+            end
         end
-    end
 
-    -- Fallback: use the last carried entity (covers local-only entities like some animals)
-    if lastCarriedEntity ~= 0 and DoesEntityExist(lastCarriedEntity) then
-        TriggerEvent("coal_debugger:log",
-            ("[coal_hunting] Deleting carcass using fallback lastCarriedEntity=%s")
-            :format(tostring(lastCarriedEntity))
-        )
-        DeleteEntity(lastCarriedEntity)
-        lastCarriedEntity = 0
-    else
-        TriggerEvent("coal_debugger:log",
-            ("[coal_hunting] Failed to delete carcass (netId=%s) – no valid entity found")
-            :format(tostring(netId))
-        )
-    end
+        -- Fallback: use the last carried entity (covers local-only entities like some animals)
+        if thisLast ~= 0 and DoesEntityExist(thisLast) then
+            TriggerEvent("coal_debugger:log",
+                ("[coal_hunting] Deleting carcass using fallback lastCarriedEntity=%s")
+                :format(tostring(thisLast))
+            )
+
+            DeleteEntity(thisLast)
+
+            -- only clear if it's still the current one
+            if thisLast == lastCarriedEntity then
+                lastCarriedEntity = 0
+            end
+        else
+            TriggerEvent("coal_debugger:log",
+                ("[coal_hunting] Failed to delete carcass (netId=%s) – no valid entity found")
+                :format(tostring(thisNetId))
+            )
+        end
+    end)
 end)
 
