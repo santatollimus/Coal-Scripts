@@ -5,12 +5,16 @@ local prompts = GetRandomIntInRange(0, 0xffffff)
 local openButcher
 local pressed = false
 --local MERCY_KILL_EVENT = 1626561060
-local MERCY_KILL_EVENT = 402722103
+--local MERCY_KILL_EVENT = 402722103
 --local MERCY_KILL_EVENT = 2145012826
 --local MERCY_KILL_EVENT = 735942751
 
-local INTERACTION_ANIMAL_SKIN = joaat("INTERACTION_ANIMAL_SKIN")
+-- local INTERACTION_ANIMAL_SKIN = joaat("INTERACTION_ANIMAL_SKIN")
 
+-- two events that seem to fire around mercy kill
+local MERCY_KILL_EVENT_1 = 402722103
+local MERCY_KILL_EVENT_2 = 2145012826
+local INTERACTION_ANIMAL_SKIN = joaat("INTERACTION_ANIMAL_SKIN")
 
 RegisterNetEvent('vorp_hunting:finalizeReward', function(entity, horse)
     -- Remove Animal/Pelt
@@ -260,9 +264,13 @@ CreateThread(function()
                 end
 ----------------------
 ----------------------
-                -- We care about loot complete and mercy kill
-                if event == `EVENT_LOOT_COMPLETE` or event == MERCY_KILL_EVENT then
-                    local eventDataSize   = 3
+              --  if event == `EVENT_LOOT_COMPLETE` or event == MERCY_KILL_EVENT then
+                                -- We care about loot complete and mercy kill
+                local isMercyKill = (event == MERCY_KILL_EVENT_1 or event == MERCY_KILL_EVENT_2)
+
+                if event == `EVENT_LOOT_COMPLETE` or isMercyKill then
+
+				local eventDataSize   = 3
                     local eventDataStruct = DataView.ArrayBuffer(8 * eventDataSize)
 
                     eventDataStruct:SetInt32(0, 0)
@@ -288,9 +296,9 @@ CreateThread(function()
                     ------------------------------------------------
                     -- AUTO-SKIN AFTER MERCY KILL
                     ------------------------------------------------
-                    if event == MERCY_KILL_EVENT then
+                    if isMercyKill then
                         if actorPed == PlayerPedId() and DoesEntityExist(animalPed) then
-                            -- small delay so mercy-kill anim finishes
+                            -- tiny delay so mercy-kill anim finishes
                             CreateThread(function()
                                 Wait(500)
                                 if DoesEntityExist(animalPed) then
@@ -306,6 +314,7 @@ CreateThread(function()
                             end)
                         end
                     end
+
 
                     ------------------------------------------------
                     -- ORIGINAL LOOT COMPLETE / SKINNED REWARD
