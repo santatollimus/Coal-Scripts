@@ -63,12 +63,12 @@ local function DrawStatusText()
 
     local str = CreateVarString(10, "LITERAL_STRING", currentStatus)
 
-    SetTextScale(0.5, 0.5)
+    SetTextScale(0.3, 0.3)
     SetTextColor(statusColor.r, statusColor.g, statusColor.b, statusColor.a)
     SetTextCentre(false)   -- left aligned
 
     -- top-right
-    DisplayText(str, 0.5, 0.65)
+    DisplayText(str, 0.5, 0.55)
 end
 
 ----------------------------------------------------
