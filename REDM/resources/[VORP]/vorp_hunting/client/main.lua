@@ -253,31 +253,25 @@ CreateThread(function()
         if size > 0 then
             for index = 0, size - 1 do
                 local event = GetEventAtIndex(0, index)
------------------------
---EVENT HASH HUNTER
------------------------
-                local event = GetEventAtIndex(0, index)
 
-                -- DEBUG: log events while you play with mercy kill
-                if event ~= 0 then
-                    print("EVENT HASH:", event)
-                end
-----------------------
-----------------------
-              --  if event == `EVENT_LOOT_COMPLETE` or event == MERCY_KILL_EVENT then
-                                -- We care about loot complete and mercy kill
+                -- Treat both of these as "mercy-kill related" events
                 local isMercyKill = (event == MERCY_KILL_EVENT_1 or event == MERCY_KILL_EVENT_2)
 
-                if event == `EVENT_LOOT_COMPLETE` or isMercyKill then
+                -- TEMP DEBUG: see which events we're hitting around hunting
+                if Config.DevMode and event ~= 0 then
+                    print(("[vorp_hunting] EVENT HASH: %s  (isMercyKill=%s)"):format(event, tostring(isMercyKill)))
+                end
 
-				local eventDataSize   = 3
+                -- We care about loot complete and mercy kill
+                if event == `EVENT_LOOT_COMPLETE` or isMercyKill then
+                    local eventDataSize   = 3
                     local eventDataStruct = DataView.ArrayBuffer(8 * eventDataSize)
 
                     eventDataStruct:SetInt32(0, 0)
                     eventDataStruct:SetInt32(8, 0)
                     eventDataStruct:SetInt32(16, 0)
 
-                    local is_data_exists = Citizen.InvokeNative(
+                    local ok = Citizen.InvokeNative(
                         0x57EC5FA4D4D6AFCA,   -- GET_EVENT_DATA
                         0,                    -- event group
                         index,
@@ -285,7 +279,10 @@ CreateThread(function()
                         eventDataSize
                     )
 
-                    if not is_data_exists then
+                    if not ok then
+                        if Config.DevMode and isMercyKill then
+                            print("[vorp_hunting] MERCY EVENT: GetEventData FAILED for event", event)
+                        end
                         goto continue_event
                     end
 
@@ -296,24 +293,34 @@ CreateThread(function()
                     ------------------------------------------------
                     -- AUTO-SKIN AFTER MERCY KILL
                     ------------------------------------------------
-                    if isMercyKill then
-                        if actorPed == PlayerPedId() and DoesEntityExist(animalPed) then
-                            -- tiny delay so mercy-kill anim finishes
-                            CreateThread(function()
-                                Wait(500)
-                                if DoesEntityExist(animalPed) then
-                                    Citizen.InvokeNative(
-                                        0xCD181A959CFDD7F4,     -- TASK_ANIMAL_INTERACTION
-                                        actorPed,
-                                        animalPed,
-                                        INTERACTION_ANIMAL_SKIN,
-                                        0,
-                                        0
-                                    )
-                                end
-                            end)
-                        end
-                    end
+                   if isMercyKill then
+    print(string.format(
+        "[vorp_hunting] MERCY DATA  event=%s  actor=%s  animal=%s  flag=%s",
+        event, actorPed, animalPed, flag
+    ))
+
+    if actorPed == PlayerPedId() and DoesEntityExist(animalPed) then
+        CreateThread(function()
+            Wait(1500)  -- give mercy-kill anim time to finish
+            if DoesEntityExist(animalPed) then
+                print("[vorp_hunting] Auto-skin: starting TASK_ANIMAL_INTERACTION on", animalPed)
+
+                Citizen.InvokeNative(
+                    0xCD181A959CFDD7F4,     -- TASK_ANIMAL_INTERACTION
+                    actorPed,
+                    animalPed,
+                    INTERACTION_ANIMAL_SKIN,
+                    0,
+                    0
+                )
+            else
+                print("[vorp_hunting] Auto-skin: animal no longer exists")
+            end
+        end)
+    else
+        print("[vorp_hunting] MERCY event not for this player or invalid animal")
+    end
+end
 
 
                     ------------------------------------------------
