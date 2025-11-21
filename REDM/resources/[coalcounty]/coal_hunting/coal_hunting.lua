@@ -70,6 +70,11 @@ HuntingConfig = {
 			{ item = "leggbears", count = 1 },
 	--		{ item = "bearc", count = 1 },
 		},
+		--Grizzly Bear
+		[1386005610] = {
+			{ item = "gbears", count = 1 },
+			{ item = "biggame", count = 3 },
+		},
 		-- Golden Bear
 		[-1414989025] = {
 			{ item = "biggame", count = 3 },
@@ -247,10 +252,9 @@ HuntingConfig = {
 			{ item = "mutton", count = 5 },
 			{ item = "legrams", count = 1 },
 		},
-		-- Legendary Black Bison
+		-- deer
 		[1110710183] = {
-			{ item = "beef", count = 5 },
-			{ item = "legbisons", count = 1 },
+			{ item = "venison", count = 2 },
 		},
 		-- Legendary Gray Bison
 		[-842852186] = {
@@ -363,10 +367,10 @@ HuntingConfig = {
 			{ item = "legwolfs", count = 1 },
 		},
 		-- Legendary Paramount Bison
-		[1110710183] = {
-			{ item = "beef", count = 5 },
-			{ item = "legbisons", count = 1 },
-		},
+		--deer [1110710183] = {
+		--	{ item = "beef", count = 5 },
+		--	{ item = "legbisons", count = 1 },
+		-- },
 		-- Legendary Bluefairy Bison
 		[-842852186] = {
 			{ item = "beef", count = 5 },
@@ -448,6 +452,45 @@ HuntingConfig = {
 			{ item = "a_c_fishbluegil_01_ms", count = 1 },
 			{ item = "gold_nugget", count = 1 },
 			{ item = "p_finisdfishlurelegendary01x", count = 1 },
+		},
+		-- Legendary Bear pelt
+		[-1631768462] = {
+			{ item = "biggame", count = 3 },
+			{ item = "leggbears", count = 1 },
+	--		{ item = "bearc", count = 1 },
+		},
+		--Legendary Golden Spirit Bear pelt
+		[98597207] = {
+			{ item = "biggame", count = 3 },
+			{ item = "legbears4", count = 1 },
+			{ item = "bearc", count = 1 },
+		},
+		--Legendary Owiza Spirit Bear pelt
+		[55897452] = {
+			{ item = "biggame", count = 3 },
+			{ item = "legbears2", count = 1 },
+			{ item = "bearc", count = 1 },
+		},
+		--Legendary Ridgeback Spirit Bear pelt
+		[499820607] = {
+			{ item = "biggame", count = 3 },
+			{ item = "legbears3", count = 1 },
+			{ item = "bearc", count = 1 },
+		},
+		--Legendary Sun Alligator
+		[-829337926] = {
+			{ item = "legaligators2", count = 1 },
+			{ item = "aligatorto", count = 1 },
+		},
+		--Legendary Banded Alligator
+		[-1828919758] = {
+			{ item = "legaligators3", count = 1 },
+			{ item = "aligatorto", count = 2 },
+		},
+		--Legendary Teca Alligator
+		[-1804478060] = {
+			{ item = "legaligators1", count = 1 },
+			{ item = "aligatorto", count = 2 },
 		},
 
 		----------------------------------------------------------------

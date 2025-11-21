@@ -6,8 +6,9 @@ description 'Anti-lock-on / Anti-aimassist'
 version '1.0.0'
 
 client_scripts {
-    'anti_lockon.lua', 
+	'anti_lockon.lua',
+	'coal_shottracker.lua',
+	'coal_weapons.lua',
+	'coal_weaponsclient.lua',
 	'custom_crosshair.lua', 
-	--'coal_aim.lua', 
-	'coal_shottracker.lua'
 }
