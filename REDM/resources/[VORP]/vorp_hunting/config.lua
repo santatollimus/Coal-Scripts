@@ -1941,21 +1941,21 @@ Config.Animals = {
         good = -336086818,
         perfect = -53270317
     },
-    [1110710183]   = {
-        name = "Deer",
-        givenItem = { "deerheart", "deerskin" },
-        givenAmount = { 0 },
-        money = 3.5,
-        gold = 0,
-        rolPoints = 0,
-        xp = 2,
-        poorQualityMultiplier = 1.0,
-        goodQualityMultiplier = 1.5,
-        perfectQualityMultiplier = 2,
-        poor = -662178186,
-        good = -1827027577,
-        perfect = -1035515486
-    },
+   -- [1110710183]   = {
+    --    name = "Deer",
+    --    givenItem = { "deerheart", "deerskin" },
+    --    givenAmount = { 0 },
+    --    money = 3.5,
+    --    gold = 0,
+    --    rolPoints = 0,
+    --    xp = 2,
+    --    poorQualityMultiplier = 1.0,
+    --    goodQualityMultiplier = 1.5,
+    --    perfectQualityMultiplier = 2,
+   --     poor = -662178186,
+   --     good = -1827027577,
+   --     perfect = -1035515486
+    --},
     [-1003616053]  = {
         name = "Duck",
         givenItem = { "feathers" },
@@ -3266,7 +3266,7 @@ if IsDuplicityVersion() then
 
                 if givenMsg ~= "" then
                     VorpCore.AddWebhook("Hunting", Webhook, GetPlayerName(_source) .. " player received" .. givenMsg)
-                    VorpCore.NotifyRightTip(_source, givenMsg, 5000)
+                    VorpCore.NotifyRightTip(_source, givenMsg, 2000)
                 end
             end
         end
@@ -3288,6 +3288,9 @@ else
 	
   -- These carcasses will be deleted 2s after skinning
     local AutoDeleteCarcassModels = {
+		--Legendary Bears
+		--Owiza
+		[-551216071] = true, -- Owiza Spirit Bear Carcass
         -- Bears
         [-1124266369] = true,  -- Bear
         [730092646]   = true,  -- American Black Bear
