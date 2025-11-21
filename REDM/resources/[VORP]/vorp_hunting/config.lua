@@ -3285,7 +3285,28 @@ else
     local prompts = GetRandomIntInRange(0, 0xffffff)
     local openButcher
     local pressed = false
+	
+  -- These carcasses will be deleted 2s after skinning
+    local AutoDeleteCarcassModels = {
+        -- Bears
+        [-1124266369] = true,  -- Bear
+        [730092646]   = true,  -- American Black Bear
 
+        -- Bison
+        [1556473961]  = true,  -- Bison
+        [367637652]   = true,  -- Bison (variant)
+
+        -- Bulls
+        [1957001316]  = true,  -- Bull
+        [195700131]   = true,  -- Hereford Bull
+
+        -- Ox
+        [556355544]   = true,  -- Angus Ox
+
+        -- Elk (includes legendary white elk, same model hash)
+        [-2021043433] = true,  -- Elk
+    }
+	
     RegisterNetEvent('vorp_hunting:finalizeReward', function(entity, horse)
         if entity and DoesEntityExist(entity) then
             DeleteEntity(entity)
@@ -3560,6 +3581,20 @@ CreateThread(function()
                                         end
                                     end
                                     TriggerServerEvent("vorp_hunting:giveReward", "skinned", { model = model }, true)
+									        TriggerServerEvent("vorp_hunting:giveReward", "skinned", { model = model }, true)
+
+        -- Auto-delete large carcasses you don't plan to pick up
+        if AutoDeleteCarcassModels[model] then
+            local carcass = pedid
+            CreateThread(function()
+                Wait(2000) -- 2000 ms = 2 seconds
+                if DoesEntityExist(carcass) then
+                    SetEntityAsMissionEntity(carcass, true, true)
+                    DeleteEntity(carcass)
+                end
+            end)
+        end
+
                                 end
                             end
                         end

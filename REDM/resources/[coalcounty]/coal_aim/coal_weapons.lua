@@ -1,1170 +1,1170 @@
 Config = Config or {}
 
 Config.Weapons = {
-    [`WEAPON_MELEE_HATCHET_MELEEONLY`] = {
+    WEAPON_MELEE_HATCHET_MELEEONLY = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_MELEE_KNIFE_MINER`] = {
+    WEAPON_MELEE_KNIFE_MINER = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_MELEE_KNIFE_JAWBONE`] = {
+    WEAPON_MELEE_KNIFE_JAWBONE = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_MELEE_KNIFE_VAMPIRE`] = {
+    WEAPON_MELEE_KNIFE_VAMPIRE = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_MELEE_KNIFE_JOHN`] = {
+    WEAPON_MELEE_KNIFE_JOHN = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_MELEE_MACHETE`] = {
+    WEAPON_MELEE_MACHETE = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_MELEE_KNIFE_BEAR`] = {
+    WEAPON_MELEE_KNIFE_BEAR = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_MELEE_KNIFE_DUTCH`] = {
+    WEAPON_MELEE_KNIFE_DUTCH = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_MELEE_KNIFE_KIERAN`] = {
+    WEAPON_MELEE_KNIFE_KIERAN = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_MELEE_KNIFE_UNCLE`] = {
+    WEAPON_MELEE_KNIFE_UNCLE = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_MELEE_KNIFE_SEAN`] = {
+    WEAPON_MELEE_KNIFE_SEAN = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_MELEE_TORCH`] = {
+    WEAPON_MELEE_TORCH = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_MELEE_KNIFE_LENNY`] = {
+    WEAPON_MELEE_KNIFE_LENNY = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_MELEE_KNIFE_SADIE`] = {
+    WEAPON_MELEE_KNIFE_SADIE = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_MELEE_KNIFE_CHARLES`] = {
+    WEAPON_MELEE_KNIFE_CHARLES = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_MELEE_KNIFE_HOSEA`] = {
+    WEAPON_MELEE_KNIFE_HOSEA = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_MELEE_TORCH_CROWD`] = {
+    WEAPON_MELEE_TORCH_CROWD = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_MELEE_KNIFE_BILL`] = {
+    WEAPON_MELEE_KNIFE_BILL = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_MELEE_KNIFE_CIVIL_WAR`] = {
+    WEAPON_MELEE_KNIFE_CIVIL_WAR = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_MELEE_KNIFE`] = {
+    WEAPON_MELEE_KNIFE = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_MELEE_KNIFE_MICAH`] = {
+    WEAPON_MELEE_KNIFE_MICAH = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_MELEE_BROKEN_SWORD`] = {
+    WEAPON_MELEE_BROKEN_SWORD = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_MELEE_KNIFE_JAVIER`] = {
+    WEAPON_MELEE_KNIFE_JAVIER = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_PISTOL_VOLCANIC`] = {
+    WEAPON_PISTOL_VOLCANIC = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_PISTOL_MAUSER_DRUNK`] = {
+    WEAPON_PISTOL_MAUSER_DRUNK = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_PISTOL_M1899`] = {
+    WEAPON_PISTOL_M1899 = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_PISTOL_SEMIAUTO`] = {
+    WEAPON_PISTOL_SEMIAUTO = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_PISTOL_MAUSER`] = {
+    WEAPON_PISTOL_MAUSER = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_REPEATER_EVANS`] = {
+    WEAPON_REPEATER_EVANS = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_REPEATER_CARBINE_SADIE`] = {
+    WEAPON_REPEATER_CARBINE_SADIE = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_REPEATER_HENRY`] = {
+    WEAPON_REPEATER_HENRY = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_REPEATER_WINCHESTER`] = {
+    WEAPON_REPEATER_WINCHESTER = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_REPEATER_WINCHESTER_JOHN`] = {
+    WEAPON_REPEATER_WINCHESTER_JOHN = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
     -- 🔹 Your custom tuned repeater (kept from original coal_weapons.lua)
-    [`WEAPON_REPEATER_CARBINE`] = {
+    WEAPON_REPEATER_CARBINE = {
         -- Maxed out accuracy & much tighter grouping
         accuracy = 1.0,   -- was 0.95
         damage   = 55.0,
         recoil   = 0.5,   -- was 1.0  (less kick)
         spread   = 0.3,   -- was 1.0  (much tighter)
-        range    = 15,    -- small bump in effective range
+        range    = 100,    -- small bump in effective range
     },
 
-    [`WEAPON_REVOLVER_DOUBLEACTION_MICAH_DUALWIELD`] = {
+    WEAPON_REVOLVER_DOUBLEACTION_MICAH_DUALWIELD = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_REVOLVER_DOUBLEACTION_MICAH`] = {
+    WEAPON_REVOLVER_DOUBLEACTION_MICAH = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_REVOLVER_SCHOFIELD_CALLOWAY`] = {
+    WEAPON_REVOLVER_SCHOFIELD_CALLOWAY = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_REVOLVER_DOUBLEACTION`] = {
+    WEAPON_REVOLVER_DOUBLEACTION = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
     -- 🔹 Your custom tuned revolver (kept from original coal_weapons.lua)
-    [`WEAPON_REVOLVER_CATTLEMAN`] = {
+    WEAPON_REVOLVER_CATTLEMAN = {
         accuracy = 1.0,   -- was 0.95
         damage   = 40.0,
         recoil   = 0.7,   -- was 1.2
         spread   = 0.4,   -- was 1.3
-        range    = 15,
+        range    = 100,
     },
 
-    [`WEAPON_REVOLVER_CATTLEMAN_MEXICAN`] = {
+    WEAPON_REVOLVER_CATTLEMAN_MEXICAN = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_REVOLVER_CATTLEMAN_HOSEA_DUALWIELD`] = {
+    WEAPON_REVOLVER_CATTLEMAN_HOSEA_DUALWIELD = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_REVOLVER_DOUBLEACTION_EXOTIC`] = {
+    WEAPON_REVOLVER_DOUBLEACTION_EXOTIC = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_REVOLVER_CATTLEMAN_SEAN`] = {
+    WEAPON_REVOLVER_CATTLEMAN_SEAN = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_REVOLVER_CATTLEMAN_SADIE`] = {
+    WEAPON_REVOLVER_CATTLEMAN_SADIE = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_REVOLVER_DOUBLEACTION_JAVIER`] = {
+    WEAPON_REVOLVER_DOUBLEACTION_JAVIER = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_REVOLVER_LEMAT`] = {
+    WEAPON_REVOLVER_LEMAT = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_REVOLVER_SCHOFIELD_BILL`] = {
+    WEAPON_REVOLVER_SCHOFIELD_BILL = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_REVOLVER_SCHOFIELD`] = {
+    WEAPON_REVOLVER_SCHOFIELD = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_REVOLVER_CATTLEMAN_SADIE_DUALWIELD`] = {
+    WEAPON_REVOLVER_CATTLEMAN_SADIE_DUALWIELD = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_REVOLVER_DOUBLEACTION_GAMBLER`] = {
+    WEAPON_REVOLVER_DOUBLEACTION_GAMBLER = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_REVOLVER_CATTLEMAN_KIERAN`] = {
+    WEAPON_REVOLVER_CATTLEMAN_KIERAN = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_REVOLVER_SCHOFIELD_UNCLE`] = {
+    WEAPON_REVOLVER_SCHOFIELD_UNCLE = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_REVOLVER_CATTLEMAN_HOSEA`] = {
+    WEAPON_REVOLVER_CATTLEMAN_HOSEA = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_REVOLVER_CATTLEMAN_LENNY`] = {
+    WEAPON_REVOLVER_CATTLEMAN_LENNY = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_REVOLVER_CATTLEMAN_JOHN`] = {
+    WEAPON_REVOLVER_CATTLEMAN_JOHN = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_REVOLVER_SCHOFIELD_DUTCH_DUALWIELD`] = {
+    WEAPON_REVOLVER_SCHOFIELD_DUTCH_DUALWIELD = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_REVOLVER_SCHOFIELD_GOLDEN`] = {
+    WEAPON_REVOLVER_SCHOFIELD_GOLDEN = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_REVOLVER_CATTLEMAN_PIG`] = {
+    WEAPON_REVOLVER_CATTLEMAN_PIG = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_REVOLVER_SCHOFIELD_DUTCH`] = {
+    WEAPON_REVOLVER_SCHOFIELD_DUTCH = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_RIFLE_SPRINGFIELD`] = {
+    WEAPON_RIFLE_SPRINGFIELD = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_RIFLE_BOLTACTION`] = {
+    WEAPON_RIFLE_BOLTACTION = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_RIFLE_BOLTACTION_BILL`] = {
+    WEAPON_RIFLE_BOLTACTION_BILL = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_RIFLE_VARMINT`] = {
+    WEAPON_RIFLE_VARMINT = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_SHOTGUN_SAWEDOFF`] = {
+    WEAPON_SHOTGUN_SAWEDOFF = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_SHOTGUN_DOUBLEBARREL_EXOTIC`] = {
+    WEAPON_SHOTGUN_DOUBLEBARREL_EXOTIC = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_SHOTGUN_PUMP`] = {
+    WEAPON_SHOTGUN_PUMP = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_SHOTGUN_REPEATING`] = {
+    WEAPON_SHOTGUN_REPEATING = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_SHOTGUN_SEMIAUTO`] = {
+    WEAPON_SHOTGUN_SEMIAUTO = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_SHOTGUN_DOUBLEBARREL`] = {
+    WEAPON_SHOTGUN_DOUBLEBARREL = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_SHOTGUN_DOUBLEBARREL_UNCLE`] = {
+    WEAPON_SHOTGUN_DOUBLEBARREL_UNCLE = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_SHOTGUN_SAWEDOFF_CHARLES`] = {
+    WEAPON_SHOTGUN_SAWEDOFF_CHARLES = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_SHOTGUN_SEMIAUTO_HOSEA`] = {
+    WEAPON_SHOTGUN_SEMIAUTO_HOSEA = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_SNIPERRIFLE_ROLLINGBLOCK_LENNY`] = {
+    WEAPON_SNIPERRIFLE_ROLLINGBLOCK_LENNY = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_SNIPERRIFLE_ROLLINGBLOCK_EXOTIC`] = {
+    WEAPON_SNIPERRIFLE_ROLLINGBLOCK_EXOTIC = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_SNIPERRIFLE_CARCANO`] = {
+    WEAPON_SNIPERRIFLE_CARCANO = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_SNIPERRIFLE_ROLLINGBLOCK`] = {
+    WEAPON_SNIPERRIFLE_ROLLINGBLOCK = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_MELEE_HATCHET`] = {
+    WEAPON_MELEE_HATCHET = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_MELEE_HATCHET_HEWING`] = {
+    WEAPON_MELEE_HATCHET_HEWING = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_MELEE_ANCIENT_HATCHET`] = {
+    WEAPON_MELEE_ANCIENT_HATCHET = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_MELEE_HATCHET_HUNTER`] = {
+    WEAPON_MELEE_HATCHET_HUNTER = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_THROWN_THROWING_KNIVES_JAVIER`] = {
+    WEAPON_THROWN_THROWING_KNIVES_JAVIER = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_THROWN_MOLOTOV`] = {
+    WEAPON_THROWN_MOLOTOV = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_MELEE_HATCHET_VIKING`] = {
+    WEAPON_MELEE_HATCHET_VIKING = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_THROWN_TOMAHAWK_ANCIENT`] = {
+    WEAPON_THROWN_TOMAHAWK_ANCIENT = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_MELEE_HATCHET_DOUBLE_BIT_RUSTED`] = {
+    WEAPON_MELEE_HATCHET_DOUBLE_BIT_RUSTED = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_THROWN_TOMAHAWK`] = {
+    WEAPON_THROWN_TOMAHAWK = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_THROWN_DYNAMITE`] = {
+    WEAPON_THROWN_DYNAMITE = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_MELEE_HATCHET_DOUBLE_BIT`] = {
+    WEAPON_MELEE_HATCHET_DOUBLE_BIT = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_THROWN_THROWING_KNIVES`] = {
+    WEAPON_THROWN_THROWING_KNIVES = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_MELEE_HATCHET_HUNTER_RUSTED`] = {
+    WEAPON_MELEE_HATCHET_HUNTER_RUSTED = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_MELEE_CLEAVER`] = {
+    WEAPON_MELEE_CLEAVER = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_MELEE_LANTERN`] = {
+    WEAPON_MELEE_LANTERN = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_MELEE_DAVY_LANTERN`] = {
+    WEAPON_MELEE_DAVY_LANTERN = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_MELEE_LANTERN_ELECTRIC`] = {
+    WEAPON_MELEE_LANTERN_ELECTRIC = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_KIT_BINOCULARS`] = {
+    WEAPON_KIT_BINOCULARS = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_KIT_CAMERA`] = {
+    WEAPON_KIT_CAMERA = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_KIT_DETECTOR`] = {
+    WEAPON_KIT_DETECTOR = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_BOW_CHARLES`] = {
+    WEAPON_BOW_CHARLES = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_BOW`] = {
+    WEAPON_BOW = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_FISHINGROD`] = {
+    WEAPON_FISHINGROD = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_LASSO`] = {
+    WEAPON_LASSO = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_WOLF`] = {
+    WEAPON_WOLF = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_WOLF_MEDIUM`] = {
+    WEAPON_WOLF_MEDIUM = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_WOLF_SMALL`] = {
+    WEAPON_WOLF_SMALL = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_ALLIGATOR`] = {
+    WEAPON_ALLIGATOR = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_ANIMAL`] = {
+    WEAPON_ANIMAL = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_BADGER`] = {
+    WEAPON_BADGER = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_BEAR`] = {
+    WEAPON_BEAR = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_BEAVER`] = {
+    WEAPON_BEAVER = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_COUGAR`] = {
+    WEAPON_COUGAR = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_COYOTE`] = {
+    WEAPON_COYOTE = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_DEER`] = {
+    WEAPON_DEER = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_FOX`] = {
+    WEAPON_FOX = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_HORSE`] = {
+    WEAPON_HORSE = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_MUSKRAT`] = {
+    WEAPON_MUSKRAT = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_RACCOON`] = {
+    WEAPON_RACCOON = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_SNAKE`] = {
+    WEAPON_SNAKE = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_FALL`] = {
+    WEAPON_FALL = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_FIRE`] = {
+    WEAPON_FIRE = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_BLEEDING`] = {
+    WEAPON_BLEEDING = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_DROWNING`] = {
+    WEAPON_DROWNING = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_DROWNING_IN_VEHICLE`] = {
+    WEAPON_DROWNING_IN_VEHICLE = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_EXPLOSION`] = {
+    WEAPON_EXPLOSION = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_RAMMED_BY_CAR`] = {
+    WEAPON_RAMMED_BY_CAR = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_RUN_OVER_BY_CAR`] = {
+    WEAPON_RUN_OVER_BY_CAR = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
     -- Weapons from 1207.80 till 1311.1212
-    [`WEAPON_KIT_CAMERA_ADVANCED`] = {
+    WEAPON_KIT_CAMERA_ADVANCED = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_MELEE_MACHETE_HORROR`] = {
+    WEAPON_MELEE_MACHETE_HORROR = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_BOW_IMPROVED`] = {
+    WEAPON_BOW_IMPROVED = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_RIFLE_ELEPHANT`] = {
+    WEAPON_RIFLE_ELEPHANT = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_REVOLVER_NAVY`] = {
+    WEAPON_REVOLVER_NAVY = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_LASSO_REINFORCED`] = {
+    WEAPON_LASSO_REINFORCED = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_KIT_BINOCULARS_IMPROVED`] = {
+    WEAPON_KIT_BINOCULARS_IMPROVED = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_MELEE_KNIFE_TRADER`] = {
+    WEAPON_MELEE_KNIFE_TRADER = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_MELEE_MACHETE_COLLECTOR`] = {
+    WEAPON_MELEE_MACHETE_COLLECTOR = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_MOONSHINEJUG_MP`] = {
+    WEAPON_MOONSHINEJUG_MP = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_THROWN_BOLAS`] = {
+    WEAPON_THROWN_BOLAS = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_THROWN_POISONBOTTLE`] = {
+    WEAPON_THROWN_POISONBOTTLE = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
     -- Weapons from 1311.12 till 1355.18
-    [`WEAPON_KIT_METAL_DETECTOR`] = {
+    WEAPON_KIT_METAL_DETECTOR = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_REVOLVER_NAVY_CROSSOVER`] = {
+    WEAPON_REVOLVER_NAVY_CROSSOVER = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_THROWN_BOLAS_HAWKMOTH`] = {
+    WEAPON_THROWN_BOLAS_HAWKMOTH = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_THROWN_BOLAS_IRONSPIKED`] = {
+    WEAPON_THROWN_BOLAS_IRONSPIKED = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_THROWN_BOLAS_INTERTWINED`] = {
+    WEAPON_THROWN_BOLAS_INTERTWINED = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
     -- Weapons from 1355.18 till 1436.26
-    [`WEAPON_MELEE_KNIFE_HORROR`] = {
+    WEAPON_MELEE_KNIFE_HORROR = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_MELEE_KNIFE_RUSTIC`] = {
+    WEAPON_MELEE_KNIFE_RUSTIC = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 
-    [`WEAPON_MELEE_LANTERN_HALLOWEEN`] = {
+    WEAPON_MELEE_LANTERN_HALLOWEEN = {
         accuracy = 1.0,
         damage   = 90.0,
-        recoil   = 1.0,
-        spread   = 1.0,
-        range    = 15,
+        recoil   = 0.0,
+        spread   = 0.5,
+        range    = 100,
     },
 }
 

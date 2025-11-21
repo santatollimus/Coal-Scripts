@@ -508,6 +508,44 @@ HuntingConfig = {
 		[-166054593] = {
 			{ item = "mutton", count = 3 },
 		},
+        ----------------------------------------------------------------
+        -- STRINGY MEAT (RACCOON / MUSKRAT / SKUNK / BADGER)
+        ----------------------------------------------------------------
+		-- American Badger
+		[-1170118274] = {
+			{ item = "stringy", count = 1 },
+			{ item = "badgers", count = 1 },
+		},
+			
+		-- Striped Skunk ($2.25 -> Tier B -> 3)
+        [-1211566332] = {
+            { item = "stringy", count = 1 },
+        },
+
+        -- Striped Skunk ($2.25 -> Tier B -> 3)
+        [-121266332] = {
+            { item = "stringy", count = 1 },
+        },
+
+        -- North American Raccoon ($2.00 -> Tier C -> 2)
+		[1458540991] = {
+		{ item = "stringy", count = 1 },
+		{ item = "raccoont", count = 1 },
+		{ item = "raccoons", count = 1 },
+		},
+		
+		        -- North American Raccoon ($2.00 -> Tier C -> 2)
+		[1783710704] = {
+		{ item = "stringy", count = 1 },
+		{ item = "raccoont", count = 1 },
+		{ item = "raccoons", count = 1 },
+		},
+
+        -- American Muskrat ($2.25 -> Tier B -> 3)
+        [-1134449699] = {
+            { item = "stringy", count = 1 },
+			{ item = "muskrats", count = 1 },
+        },
 
 		----------------------------------------------------------------
 		-- VENISON-TYPE ANIMALS (Deer, Pronghorn, Elk, etc.)
@@ -516,6 +554,10 @@ HuntingConfig = {
 		[-1853957575] = {
 			{ item = "venison", count = 4 },
 		},
+		        -- Whitetail Buck ($3.15 -> Tier B -> 3)
+        [-1963605336] = {
+            { item = "venison", count = 2 },
+        },
 		-- Black Tail Deer
 		[1340914825] = {
 			{ item = "venison", count = 4 },
@@ -532,7 +574,179 @@ HuntingConfig = {
 		[1466150167] = {
 			{ item = "venison", count = 4 },
 		},
+		        -- American Pronghorn Doe ($3.75 -> Tier A -> 4)
+        [1755643085] = {
+            { item = "venison", count = 4 },
+        },
 
+  ----------------------------------------------------------------
+        -- BIRD MEAT (ALL BIRDS THAT NORMALLY GIVE FEATHERS)
+        ----------------------------------------------------------------
+
+        -- Duck ($1.65 -> Tier C -> 2)
+        [-1003616053] = {
+            { item = "bird", count = 1 },
+        },
+
+        -- Eagles / Egrets (high-ish but still birds, keep 1)
+        [1459778951] = {                    -- Eagle
+            { item = "bird", count = 1 },
+        },
+        [831859211] = {                     -- Egret
+            { item = "bird", count = 1 },
+        },
+
+        -- Vulture (~2.5–2.75 -> Tier B -> 3)
+        [1104697660] = {
+            { item = "bird", count = 1 },
+			{ item = "condorf", count = 2 },
+			{ item = "condorb", count = 1 },
+        },
+
+  --       Turkeys ($2.0 -> Tier C -> 2)
+        [-466054788] = {                    -- Wild Turkey
+            { item = "bird", count = 1 },
+			{ item = "turkeyf", count = 1 },
+			{ item = "turkeyb", count = 1 },
+        },
+        [-2011226991] = {                   -- Wild Turkey
+            { item = "bird", count = 1 },
+			{ item = "turkeyf", count = 1 },
+			{ item = "turkeyb", count = 1 },
+        },
+        [-166054593] = {                    -- Wild Turkey
+            { item = "bird", count = 1 },
+			{ item = "turkeyf", count = 1 },
+			{ item = "turkeyb", count = 1 },
+        },
+
+        -- Herring Seagull (~1.5 -> Tier C -> 2)
+        [-164963696] = {
+            { item = "bird", count = 1 },
+			{ item = "seagullf", count = 1 },
+			{ item = "seagullb", count = 1 },
+        },
+
+        -- Roseate Spoonbill (~2.5 -> Tier B -> 3)
+        [-1076508705] = {
+            { item = "bird", count = 1 },
+			{ item = "rspoonf", count = 1 },
+			{ item = "rspoonb", count =1 },
+        },
+
+        -- Dominique Rooster (small/cheap -> 1–2, we keep 2 for fun)
+        [2023522846] = {
+            { item = "bird", count = 1 },
+			{ item = "cockf", count = 1 },
+			{ item = "cockc", count = 1 },
+        },
+
+        -- Red-Footed Booby (~2.0+ -> 2)
+        [-466687768] = {
+            { item = "bird", count = 1 },
+			{ item = "boobyf", count = 1 },
+			{ item = "boobyb", count = 1 },
+        },
+
+        -- Raven ($1.75 -> Tier C -> 2)
+        [-575340245] = {
+            { item = "bird", count = 1 },
+			{ item = "ravenf", count = 1 },
+			{ item = "ravenc", count = 1 },
+        },
+
+        -- Greater Prairie Chicken ($1.0 -> Tier D -> 1)
+        [2079703102] = {
+            { item = "bird", count = 1 },
+			{ item = "prairif", count = 1 },
+			{ item = "prairib", count = 1 },
+        },
+
+        -- Ring-Necked Pheasant ($1.25 -> border C/D -> 2)
+        [1416324601] = {
+            { item = "bird", count = 1 },
+			{ item = "peasantf", count = 1 },
+			{ item = "peasantb", count = 1 },
+        },
+		-- California Condor
+		[2105463796] = {
+			{ item = "bird", count = 1 },
+			{ item = "condorf", count = 2 },
+		},
+        -- American White Pelican ($1.5 -> Tier C -> 2)
+        [1265966684] = {
+            { item = "bird", count = 1 },
+			{ item = "pelicanf", count = 1 },
+			{ item = "pelicanb", count = 1 },
+        },
+
+        -- Blue And Yellow Macaw (exotic bird, treat as 2)
+        [-1797450568] = {
+            { item = "bird", count = 1 },
+        },
+
+        -- Californian Condor (~2.75 -> Tier B -> 3)
+        [120598262] = {
+            { item = "bird", count = 1 },
+			{ item = "kcondorf", count = 1 },
+			{ item = "kcondorb", count = 1 },
+        },
+
+        -- Dominique Chicken (similar to rooster)
+        [-2063183075] = {
+            { item = "bird", count = 1 },
+			{ item = "chickenf", count = 1 },
+			{ item = "chickenheart", count = 1 },
+        },
+
+        -- Double-Crested Cormorant (~2.0 -> Tier C -> 2)
+        [-2073130256] = {
+            { item = "bird", count = 1 },
+			{ item = "bbirdf", count = 1},
+			{ item = "bbirdb", count = 1},
+        },
+
+        -- Whooping Crane ($2.75 -> Tier B -> 3)
+        [-564099192] = {
+            { item = "bird", count = 1 },
+			{ item = "daruf", count = 1 },
+			{ item = "darub", count = 1 },
+        },
+
+        -- Canada Goose ($2.75 -> Tier B -> 3)
+        [723190474] = {
+            { item = "bird", count = 1 },
+			{ item = "goosef", count = 1 },
+			{ item = "gooseb", count = 1 },
+        },
+
+        -- Ferruginous Hawk (~2.5 -> Tier B -> 3)
+        [-2145890973] = {
+            { item = "bird", count = 1 },
+			{ item = "hawkf", count = 1 },
+			{ item = "hawkt", count = 1 },
+        },
+
+        -- Great Blue Heron (~2.5 -> Tier B -> 3)
+        [1095117488] = {
+            { item = "bird", count = 1 },
+			{ item = "kbirdf", count = 1 },
+			{ item = "kbirdb", count = 1 },
+        },
+
+        -- Common Loon (~2.0 -> Tier C -> 2)
+        [386506078] = {
+            { item = "bird", count = 1 },
+			{ item = "loonf", count = 1 },
+			{ itme = "loonb", count = 1 },
+        },
+
+        -- Great Horned Owl (~2.0 -> Tier C -> 2)
+        [-86244272] = {
+            { item = "bird", count = 1 },
+			{ item = "owlf", count = 1 },
+			{ item = "owlt", count = 1 },
+        },
 		----------------------------------------------------------------
 		-- PORK-TYPE ANIMALS (Boar, Pig)
 		----------------------------------------------------------------
