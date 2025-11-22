@@ -1,12 +1,12 @@
 -- crime_scanner.lua
 -- Simple crime scanner for Coal Wanted:
 --   - watches for peds you kill
---   - when you kill an innocent civilian (Stranger NPC), adds murder heat
+--   - when you kill an innocent civilian (Stranger NPC) or domestic animal, adds heat
 
 print("[crime_scanner] Loaded successfully")
 
 local DEBUG_KILLS  = true   -- show what we detect in F8
-local DEBUG_FILTER = false  -- show skipped peds / groups
+local DEBUG_FILTER = true  -- show skipped peds / groups
 
 -- Relationship groups for civilians (Strangers)
 local CIV_GROUPS = {
@@ -24,6 +24,15 @@ local LAW_GROUPS = {
     [`REL_LAW_RHODES`]         = true,
     [`REL_LAW_VALENTINE`]      = true,
     [`REL_LAW_SAINT_DENIS`]    = true,
+	[1232372459]			   = true, --del lobos
+	[-1663301869]			   = true, --del Lobos
+}
+
+-- domestic animals (horses, ranch livestock, etc.)
+local DOMESTIC_GROUPS = {
+    [`REL_DOMESTIC_ANIMAL`] = true,
+	[-1683752762] = true,
+	[707888648] = true,
 }
 
 -- track peds we've already processed so we don't double-count
@@ -56,25 +65,30 @@ CreateThread(function()
 
                             -- Is this an innocent Stranger NPC?
                             if IsPedHuman(ped) and CIV_GROUPS[rel] then
-                                -- This is your "killed innocent Stranger" case
                                 TriggerServerEvent("coal_wanted:Crime", "murder")
-
                                 if DEBUG_KILLS then
                                     print("[crime_scanner] -> Added heat for murder (innocent Stranger)")
                                 end
 
-                            -- (optional) lawmen – you can treat these differently later
+                            -- Lawmen
                             elseif IsPedHuman(ped) and LAW_GROUPS[rel] then
-                                -- For now, also treat as murder
                                 TriggerServerEvent("coal_wanted:Crime", "murder")
-
                                 if DEBUG_KILLS then
                                     print("[crime_scanner] -> Added heat for murder (lawman)")
                                 end
 
-                            elseif DEBUG_FILTER then
-                                print("[crime_scanner] Skipped kill (not civilian Stranger)", model, rel)
-                            end
+                            -- Domestic animals (horses / livestock)
+                            elseif (not IsPedHuman(ped)) and DOMESTIC_GROUPS[rel] then
+                                -- change "murder" to "theft" if you want smaller heat
+                                TriggerServerEvent("coal_wanted:Crime", "murder")
+                                if DEBUG_KILLS then
+                                    print("[crime_scanner] -> Added heat for killing domestic animal/horse")
+                                end
+
+elseif DEBUG_FILTER then
+    print("[crime_scanner] Skipped kill (not tracked)", model, rel)
+end
+
                         end
                     end
                 end

@@ -265,9 +265,9 @@ Config.SkinnableAnimals = {
     },
 	[2028722809] = {
 		name = "Boar",
-		givenItem   = { "boars", "porkfat", "boarmusk" },              -- or whatever you want
-		givenAmount = { 1, 1, 1 },                      -- match your item list
-		givenDisplay = { "Boar Pelt", "Boar fat", "Boar Tusk" },            -- optional, for prompts
+		givenItem   = { "pork", "boars", "porkfat", "boarmusk" },              -- or whatever you want
+		givenAmount = { 1, 1, 1, 1 },                      -- match your item list
+		givenDisplay = { "Pork", "Boar Pelt", "Boar fat", "Boar Tusk" },            -- optional, for prompts
 		money = 0,
 		gold = 0,
 		rolPoints = 0,
@@ -1687,11 +1687,11 @@ Config.SkinnableAnimals = {
         action = "Skinned",
         type = "inventory_items_mp"
     },
-[2028722809] = {
+["2028722809:1"] = {
     name = "Legendary Giant Boar",
-    givenItem = { "porkfat", "boars", "boarmusk" },
+    givenItem = { "porkfat", "legboars", "boarmusk" },
     givenAmount = { 1, 1, 1 },
-    givenDisplay = { "Pork Fat", "Boar pelt", "Boar Tusk" },
+    givenDisplay = { "Pork Fat", "Legendary Boar pelt", "Boar Tusk" },
     money = 0,
     gold = 0,
     rolPoints = 0,
@@ -3287,28 +3287,33 @@ else
     local pressed = false
 	
   -- These carcasses will be deleted 2s after skinning
-    local AutoDeleteCarcassModels = {
-		--Legendary Bears
-		--Owiza
-		[-551216071] = true, -- Owiza Spirit Bear Carcass
-        -- Bears
-        [-1124266369] = true,  -- Bear
-        [730092646]   = true,  -- American Black Bear
+local AutoDeleteCarcassModels = {
+    --Legendary Bears
+    --Owiza
+    [-551216071] = true, -- Owiza Spirit Bear Carcass
 
-        -- Bison
-        [1556473961]  = true,  -- Bison
-        [367637652]   = true,  -- Bison (variant)
+    -- Bears
+    [-1124266369] = true,  -- Bear
+    [730092646]   = true,  -- American Black Bear
 
-        -- Bulls
-        [1957001316]  = true,  -- Bull
-        [195700131]   = true,  -- Hereford Bull
+    -- Boar (normal + legendary share this model)
+    [2028722809]  = true,  -- Boar / Legendary Giant Boar
 
-        -- Ox
-        [556355544]   = true,  -- Angus Ox
+    -- Bison
+    [1556473961]  = true,  -- Bison
+    [367637652]   = true,  -- Bison (variant)
 
-        -- Elk (includes legendary white elk, same model hash)
-        [-2021043433] = true,  -- Elk
-    }
+    -- Bulls
+    [1957001316]  = true,  -- Bull
+    [195700131]   = true,  -- Hereford Bull
+
+    -- Ox
+    [556355544]   = true,  -- Angus Ox
+
+    -- Elk (includes legendary white elk, same model hash)
+    [-2021043433] = true,  -- Elk
+}
+
 	
     RegisterNetEvent('vorp_hunting:finalizeReward', function(entity, horse)
         if entity and DoesEntityExist(entity) then
@@ -3547,6 +3552,8 @@ CreateThread(function()
 end)
 
 --  Check for Animals being skinned/plucked/stored
+--  Check for Animals being skinned/plucked/stored
+--  Check for Animals being skinned/plucked/stored
 CreateThread(function()
     repeat Wait(1000) until LocalPlayer.state.IsInSession
 
@@ -3562,42 +3569,77 @@ CreateThread(function()
                     eventDataStruct:SetInt32(0, 0)
                     eventDataStruct:SetInt32(8, 0)
                     eventDataStruct:SetInt32(16, 0)
-                    local is_data_exists = Citizen.InvokeNative(0x57EC5FA4D4D6AFCA, 0, index, eventDataStruct:Buffer(),
-                        eventDataSize)
+
+                    local is_data_exists = Citizen.InvokeNative(
+                        0x57EC5FA4D4D6AFCA,
+                        0,
+                        index,
+                        eventDataStruct:Buffer(),
+                        eventDataSize
+                    )
+
                     if is_data_exists then
                         if PlayerPedId() == eventDataStruct:GetInt32(0) then
                             local pedid = eventDataStruct:GetInt32(8)
+
+                            -- 1 == successful skin
                             if eventDataStruct:GetInt32(16) == 1 then
                                 local model = GetEntityModel(pedid)
-                                if model and Config.SkinnableAnimals[model] then
-                                    if Config.SkinnableAnimals[model].deletePelt then
+
+                                -- Choose config key: plain model or "model:outfit"
+                                local key = model
+
+                                if model ~= nil then
+                                    -- use DECOR set by coal_spawn / coal_hunting
+                                    local outfitIndex = nil
+                                    if DecorExistOn(pedid, DECOR_OUTFIT) then
+                                        outfitIndex = DecorGetInt(pedid, DECOR_OUTFIT)
+                                    end
+
+                                    if outfitIndex ~= nil then
+                                        local outfitKey = tostring(model) .. ":" .. tostring(outfitIndex)
+                                        if Config.SkinnableAnimals[outfitKey] then
+                                            key = outfitKey
+                                        end
+                                    end
+                                end
+
+                                if key and Config.SkinnableAnimals[key] then
+                                    local cfg = Config.SkinnableAnimals[key]
+
+                                    -- optional pelt auto-delete
+                                    if cfg.deletePelt then
                                         Wait(1000)
                                         local holding = Citizen.InvokeNative(0xD806CD2A4F2C2996, PlayerPedId())
-                                        local isPelt = GetIsCarriablePelt(holding) == 1
-                                        local isAnimal = GetIsAnimal(holding) == 1
+                                        local isPelt   = (GetIsCarriablePelt(holding) == 1)
+                                        local isAnimal = (GetIsAnimal(holding) == 1)
 
                                         if isPelt and not isAnimal then
                                             SetEntityAsMissionEntity(holding, true, true)
                                             SetEntityAsNoLongerNeeded(holding)
-
                                             DeleteEntity(holding)
                                         end
                                     end
-                                    TriggerServerEvent("vorp_hunting:giveReward", "skinned", { model = model }, true)
-									        
 
-        -- Auto-delete large carcasses you don't plan to pick up
-        if AutoDeleteCarcassModels[model] then
-            local carcass = pedid
-            CreateThread(function()
-                Wait(2000) -- 2000 ms = 2 seconds
-                if DoesEntityExist(carcass) then
-                    SetEntityAsMissionEntity(carcass, true, true)
-                    DeleteEntity(carcass)
-                end
-            end)
-        end
+                                    -- Give rewards using numeric model or "model:outfit"
+                                    TriggerServerEvent(
+                                        "vorp_hunting:giveReward",
+                                        "skinned",
+                                        { model = key },
+                                        true
+                                    )
 
+                                    -- Delete big carcasses after skinning (uses raw model hash)
+                                    if AutoDeleteCarcassModels[model] then
+                                        local carcass = pedid
+                                        CreateThread(function()
+                                            Wait(2000)
+                                            if DoesEntityExist(carcass) then
+                                                SetEntityAsMissionEntity(carcass, true, true)
+                                                DeleteEntity(carcass)
+                                            end
+                                        end)
+                                    end
                                 end
                             end
                         end
@@ -3607,6 +3649,8 @@ CreateThread(function()
         end
     end
 end)
+
+
 
 CreateThread(function()
     if not Config.butcherfunction then

@@ -40,9 +40,9 @@ AddEventHandler('coal_wanted:ServerTierChanged', function(suspectSrc, newTier, o
     end
 
     -- Notification to suspect: spawn posse if threshold crossed
-    if LawPosseConfig and newTier >= (LawPosseConfig.posseTier or MIN_TIER_TO_HARD_AGGRO) then
-        TriggerClientEvent('coal_law:SpawnPosseForSuspect', suspectSrc, suspectSrc, newTier)
-    end
+  --  if LawPosseConfig and newTier >= (LawPosseConfig.posseTier or MIN_TIER_TO_HARD_AGGRO) then
+    --    TriggerClientEvent('coal_law:SpawnPosseForSuspect', suspectSrc, suspectSrc, newTier)
+   -- end
 end)
 
 ----------------------------------------------------------------
@@ -76,4 +76,41 @@ RegisterNetEvent('coal_law:RequestLawList', function()
     end
 
     TriggerClientEvent('coal_law:ReceiveLawList', src, list)
+end)
+-- Track who already had a posse spawned at their current heat streak
+local PosseSpawnedFor = {}   -- [src] = true/false
+
+CreateThread(function()
+    while true do
+        Wait(10000) -- check every 10 seconds; tweak if you want faster
+
+        if not LawPosseConfig then
+            goto continue
+        end
+
+        local posseTier = LawPosseConfig.posseTier or MIN_TIER_TO_HARD_AGGRO
+
+        -- Loop all players on the server
+        for _, src in ipairs(GetPlayers()) do
+            local intSrc = tonumber(src)
+
+            Core.Callback.Trigger('coal_wanted:GetHeat', intSrc, function(heat, tier)
+                local hasPosse = PosseSpawnedFor[intSrc] or false
+
+                -- If player is hot enough and no posse yet for this heat streak → spawn
+                if tier >= posseTier and not hasPosse then
+                    PosseSpawnedFor[intSrc] = true
+                    print(('[LAW] Spawning posse for %s (tier=%d heat=%d)'):format(intSrc, tier, heat))
+                    TriggerClientEvent('coal_law:SpawnPosseForSuspect', intSrc, intSrc, tier)
+
+                -- If player cooled down below posseTier → allow future posse again
+                elseif tier < posseTier and hasPosse then
+                    PosseSpawnedFor[intSrc] = false
+                    print(('[LAW] Reset posse flag for %s (tier=%d heat=%d)'):format(intSrc, tier, heat))
+                end
+            end)
+        end
+
+        ::continue::
+    end
 end)
