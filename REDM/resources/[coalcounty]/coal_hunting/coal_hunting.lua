@@ -275,6 +275,11 @@ HuntingConfig = {
         [545068538] = {                     -- Western Rattlesnake
             { item = "stringy", count = 3 },
         },
+		--rattlesnake pelt
+		[-2054685425] = {
+			{ item = "snakes", count = 1 },
+		},
+	
 
         -- Virginia Possum (~2.0 -> Tier C -> 2)
 		[-1414989025] = {
@@ -317,9 +322,11 @@ HuntingConfig = {
 		-- American Badger
 		[-1170118274] = {
 			{ item = "stringy", count = 1 },
+		},
+				--American Badger Pelt
+		[1127218773] = {
 			{ item = "badgers", count = 1 },
 		},
-			
 		-- Striped Skunk ($2.25 -> Tier B -> 3)
         [-1211566332] = {
             { item = "stringy", count = 1 },

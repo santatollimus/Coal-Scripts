@@ -3584,7 +3584,7 @@ CreateThread(function()
                                         end
                                     end
                                     TriggerServerEvent("vorp_hunting:giveReward", "skinned", { model = model }, true)
-									        TriggerServerEvent("vorp_hunting:giveReward", "skinned", { model = model }, true)
+									        
 
         -- Auto-delete large carcasses you don't plan to pick up
         if AutoDeleteCarcassModels[model] then
